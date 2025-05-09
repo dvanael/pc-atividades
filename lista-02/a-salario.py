@@ -1,0 +1,6 @@
+name = input()
+hrs = int(input())
+valor = float(input())
+salario = "{:.2f}".format(hrs * valor)
+print(name)
+print("R$", salario)

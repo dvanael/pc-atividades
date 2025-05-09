@@ -1,0 +1,5 @@
+v = int(input())
+q = int(input())
+vt = int(input())
+print("A pagar:", v * q)
+print("Troco :", vt - (v * q))
