@@ -1,14 +1,16 @@
-def primo(n, d=1):
+def primo(n):
+    def conta(d):
+        if d == 0:
+            return 0
+        elif n % d == 0:
+            return 1 + conta(d - 1)
+        else:
+            return conta(d - 1)
 
-    if n == 0:
-        return 0
-    
-    if d > n:
-        return 0
-
-    if n % d == 0:
-        return True + primo(n, d+1)
+    if conta(n) == 2:
+        return True
     else:
-        return False + primo(n, d+1)
-    
+        return False
+
+
 print(primo(int(input())))

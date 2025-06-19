@@ -1,14 +1,13 @@
-def conta_divisores(n, d=1):
-    if n == 0:
-        return 0
-    
-    if d > n:
-        return 0
+def conta_divisores(n):
+    def conta(d):
+        if d == 0:
+            return 0
+        elif n % d == 0:
+            return 1 + conta(d - 1)
+        else:
+            return conta(d - 1)
 
-    print(n, d)
-    if n % d == 0:
-        return 1 + conta_divisores(n, d+1)
-    else:
-        return conta_divisores(n, d+1)
+    return conta(n)
+
 
 print(conta_divisores(int(input())))
