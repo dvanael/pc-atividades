@@ -1,14 +1,17 @@
 s, mi = map(int, input().split())
+massa = float(mi)
+divisoes = 0
 
-tempo = 0
-while mi > 0.5:
-    mi = mi/2
-    tempo += s
+while massa >= 0.5:
+    massa /= 2
+    divisoes += 1
+
+tempo = s * divisoes
 
 dias = tempo // 86400
 horas = (tempo % 86400) // 3600
-minutos = ((tempo % 86400) % 3600) // 60
-segundos = int(((tempo % 86400) % 3600) % 60)
+minutos = (tempo % 3600) // 60
+segundos = tempo % 60
 
 dias = f"{dias} dias"
 horas = "{:02}".format(horas)
